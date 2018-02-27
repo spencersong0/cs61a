@@ -1,0 +1,185 @@
+Last login: Thu Feb  1 12:59:36 on ttys000
+$ ~ > cd Desktop/
+$ Desktop > cs cs61a/
+-bash: cs: command not found
+$ Desktop > cd cs61a/
+$ cs61a > cd homework/
+$ homework > cd hw03
+$ hw03 > python3 ok -q has_seven
+=====================================================================
+Assignment: Homework 3
+OK, version v1.13.10
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for has_seven
+
+>>> from hw03 import *
+>>> has_seven(3)
+False
+>>> has_seven(7)
+False
+
+# Error: expected
+#     True
+# but got
+#     False
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: spencersong@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+$ hw03 > python3 ok -q has_seven
+=====================================================================
+Assignment: Homework 3
+OK, version v1.13.10
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for has_seven
+
+>>> from hw03 import *
+>>> has_seven(3)
+False
+>>> has_seven(7)
+False
+
+# Error: expected
+#     True
+# but got
+#     False
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: spencersong@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+$ hw03 > python3 ok -q has_seven
+=====================================================================
+Assignment: Homework 3
+OK, version v1.13.10
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Doctests for has_seven
+
+>>> from hw03 import *
+>>> has_seven(3)
+False
+>>> has_seven(7)
+True
+>>> has_seven(2734)
+False
+
+# Error: expected
+#     True
+# but got
+#     False
+
+---------------------------------------------------------------------
+Test summary
+    0 test cases passed before encountering first failed test case
+
+Backup... 100% complete
+Backup successful for user: spencersong@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+$ hw03 > python3 ok -q has_seven
+=====================================================================
+Assignment: Homework 3
+OK, version v1.13.10
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Test summary
+    1 test cases passed! No cases failed.
+
+Backup... 100% complete
+Backup successful for user: spencersong@berkeley.edu
+
+Checking for software updates...
+OK is up to date
+$ hw03 > clear
+
+$ hw03 > python3 ok -q summation
+=====================================================================
+Assignment: Homework 3
+OK, version v1.13.10
+=====================================================================
+
+Traceback (most recent call last):
+  File "/Users/spencersong/Desktop/cs61a/homework/hw03/hw03.py", line 52
+    if n >= 0
+            ^
+SyntaxError: invalid syntax
+
+Error loading assignment: Error importing file hw03.py
+Checking for software updates...
+OK is up to date
+$ hw03 > 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

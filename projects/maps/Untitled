@@ -1,0 +1,2 @@
+from utils import distance
+print(distance([-2,7],[-3.5, 9]))
