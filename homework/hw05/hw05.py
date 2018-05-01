@@ -323,8 +323,19 @@ class FreeChecking(Account):
     """
     withdraw_fee = 1
     free_withdrawals = 2
-    
-    return
+
+    def withdraw(self, drawn):
+        self.free_withdrawals -= 1
+        if self.free_withdrawals < 0:
+            drawn = drawn + self.withdraw_fee
+
+        self.balance = self.balance - drawn
+
+        if self.balance < 0:
+            self.balance = self.balance + drawn
+            return 'Insufficient funds'
+
+        return self.balance
 
 ############
 # Mutation #
@@ -350,7 +361,38 @@ def make_counter():
     >>> c('b') + c2('b')
     5
     """
-    "*** YOUR CODE HERE ***"
+    #with list__ check
+    user_i = []
+    val1 = 0
+    val2 = 0
+    def counter(var_i):
+        nonlocal user_i
+        nonlocal val1
+        nonlocal val2
+        if user_i == []:
+            val1 = var_i
+        if val1 != var_i:
+            val2 += 1
+            return val2
+        user_i.extend(val1)
+        return len(user_i)
+
+    return counter
+
+    #with dictionary__ check?
+    """user_i = {}
+    def counter(inputs):
+        nonlocal user_i
+        if inputs in user_i.keys():
+            user_i[inputs] += 1
+            return user_i[inputs]
+        else:
+            user_i[inputs] = 1
+            return user_i[inputs]
+    return counter """
+
+
+
 
 def make_fib():
     """Returns a function that returns the next Fibonacci number
@@ -371,7 +413,14 @@ def make_fib():
     >>> fib() + sum([fib2() for _ in range(5)])
     12
     """
-    "*** YOUR CODE HERE ***"
+    seq1, seq2 = 0, 1
+    def fib():
+        nonlocal seq1
+        nonlocal seq2
+        holder = seq1
+        seq1, seq2 = seq2, seq1 + seq2
+        return holder
+    return fib
 
 def make_withdraw(balance, password):
     """Return a password-protected withdraw function.
@@ -396,7 +445,45 @@ def make_withdraw(balance, password):
     >>> w(10, 'l33t')
     "Your account is locked. Attempts: ['hwat', 'a', 'n00b']"
     """
-    "*** YOUR CODE HERE ***"
+    attempts = []
+    def withdraw(drawn, p_attempt):
+        nonlocal balance, password, attempts
+
+        if len(attempts) == 3:
+            return "Your account is locked. Attempts: " + str(attempts)
+        if p_attempt != password:
+            attempts.append(p_attempt)
+            return 'Incorrect password'
+
+        if balance - drawn < 0:
+            return 'Insufficient funds'
+        balance = balance - drawn
+        return balance
+    return withdraw
+
+    """attempts = []
+    count = 0
+    count_attempt = 0
+    #set password
+    if count == 0:
+        new_password = password
+        count += 1
+
+    if password != new_password and count_attempt < 3:
+        attempts.extend(password)
+        count_attempt += 1
+        return 'Incorrect password'
+    if count_attempt == 3:
+        print ('"Your account is locked. Attempts: ' + attempts + '"')
+    def withdraw(new_bal, password):
+        nonlocal balance
+        if balance - new_bal < 0:
+            return 'Insufficient funds'
+        else:
+            balance = balance - new_bal
+            return balance
+    return withdraw """
+
 
 def make_joint(withdraw, old_password, new_password):
     """Return a password-protected withdraw function that has joint access to
@@ -436,7 +523,15 @@ def make_joint(withdraw, old_password, new_password):
     >>> make_joint(w, 'hax0r', 'hello')
     "Your account is locked. Attempts: ['my', 'secret', 'password']"
     """
-    "*** YOUR CODE HERE ***"
+    def joint_acc(balance, password):
+        if new_password == password:
+            return withdraw(balance, old_password)
+        return withdraw(balance, password)
+    holder = withdraw(0, old_password)
+    if type(holder) == str:
+        return holder
+    else:
+        return joint_acc
 
 ###################
 # Extra Questions #
